@@ -1,9 +1,21 @@
-export default function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import { RegisterPage } from "./pages/RegisterPage";
+import { LoginPage } from "./pages/LoginPage";
+import { PlaylistAnalyzePage } from "./pages/PlaylistAnalyzePage";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+
+function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-blue-500">
-      <h1 className="text-4xl font-bold text-white">
-        Tailwind CSS is working! ✅
-      </h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/analyze" element={<ProtectedRoute><PlaylistAnalyzePage /></ProtectedRoute>} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
