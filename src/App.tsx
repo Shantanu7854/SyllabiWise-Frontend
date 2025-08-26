@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { LoginPage } from "./pages/LoginPage";
 import { PlaylistAnalyzePage } from "./pages/PlaylistAnalyzePage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { useAuth } from "./context/AuthContext";
 
 function App() {
   return (
