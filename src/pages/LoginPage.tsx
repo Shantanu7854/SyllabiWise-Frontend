@@ -9,11 +9,13 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { User, Lock } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
 export const LoginPage = () => {
   const [form, setForm] = useState({ username: "", password: "" });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +24,8 @@ export const LoginPage = () => {
     setLoading(false);
 
     if (res.access) {
-      setToken(res.access);
+      setToken(res.access); // still store JWT
+      login(form.username); // update global auth state
       toast.success("🎉 Logged in successfully!");
       navigate("/analyze");
     } else {
@@ -41,7 +44,7 @@ export const LoginPage = () => {
         <Card className="shadow-lg border rounded-2xl">
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-center text-blue-600">
-              Welcome Back
+              Hey👋
             </CardTitle>
             <p className="text-center text-gray-500 text-sm mt-2">
               Login to continue using <span className="font-semibold">SyllabiWise</span>
