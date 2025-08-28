@@ -14,8 +14,8 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-blue-600">
-          Playlist Analyzer
+        <Link to="/" className="text-2xl font-bold text-blue-950">
+          SyllabiWise
         </Link>
 
         {/* Nav Links */}

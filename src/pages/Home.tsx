@@ -28,14 +28,19 @@ export const Home = () => {
           Get curated video recommendations according to your syllabus, powered by AI.
         </motion.p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link to="/login">
-            <Button size="lg">Login</Button>
+          <Link to="/analyze">
+            <Button
+              size="lg"
+              className="px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white hover:opacity-90 transition-transform transform hover:scale-105"
+            >
+              Get Started
+            </Button>
           </Link>
-          <Link to="/register">
+          {/* <Link to="/register">
             <Button size="lg" variant="outline">
               Register
             </Button>
-          </Link>
+          </Link> */}
         </div>
       </section>
 
