@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://syllabiwise-backend.onrender.com/api";
+// const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
 
 export async function registerUser(data: {username: string, email: string, password: string}) {
   const res = await fetch(`${BASE_URL}/register/`, {
