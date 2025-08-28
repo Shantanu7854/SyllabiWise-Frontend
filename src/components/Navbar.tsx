@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 
 export const Navbar = () => {
   const location = useLocation();
-  const { user, logout } = useAuth(); // 👈 get user & logout
+  const { user, logout } = useAuth(); //  get user & logout
 
   const navItems = [
     { path: "/", label: "Home" },
